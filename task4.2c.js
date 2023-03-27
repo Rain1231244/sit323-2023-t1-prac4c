@@ -18,7 +18,7 @@ const jwtOptions = {
 };
 
 passport.use(new JwtStrategy(jwtOptions, (jwtPayload, done) => {
-  // Here you would normally query your database to find the user with the given id
+  // query database to find the user with the given id
   const user = { id: jwtPayload.id }; // Replace this with your own user data
   
   if (user) {
@@ -35,8 +35,8 @@ app.get('/protected', authenticate, (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    // Here you would normally query your database to find the user with the given credentials
-   // Replace this with your own user data
+    // query database to find the user with the given credentials
+
 
    //password=req.params.password
     id=req.query.id
